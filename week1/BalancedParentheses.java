@@ -1,13 +1,33 @@
+package week1;
+
 /**
  *
- * @author ...
+ * @author JC
  */
 import java.util.Stack;
 
 public class BalancedParentheses {
     public static boolean isBalanced(String s) {
-        // WRITE YOUR CODE HERE!!
-        return true; // UPDATE THIS LINE OF CODE ALSO!
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[') {
+                stack.push(c);
+            } else {
+                if (stack.isEmpty())
+                    return false;
+
+                char top = stack.pop();
+                if (c == ')' && top != '(')
+                    return false;
+                if (c == '}' && top != '{')
+                    return false;
+                if (c == ']' && top != '[')
+                    return false;
+            }
+        }
+
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
@@ -20,4 +40,3 @@ public class BalancedParentheses {
         // ADD YOUR TEST CASES HERE!!!
     }
 }
-
