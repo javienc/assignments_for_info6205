@@ -38,5 +38,11 @@ public class BalancedParentheses {
         String input2 = "({){})))";
         System.out.println(isBalanced(input2) ? "Balanced" : "Not Balanced"); // EXPECTED RESULT : Not Balanced
         // ADD YOUR TEST CASES HERE!!!
+
+        String input3 = "((()";
+        System.out.println(isBalanced(input3) ? "Balanced" : "Not Balanced");
+
+        String input4 = "";
+        System.out.println(isBalanced(input4) ? "Balanced" : "Not Balanced");
     }
 }
